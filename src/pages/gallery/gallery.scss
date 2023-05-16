@@ -1,0 +1,235 @@
+.wrapper-gallery {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  flex-grow: 1;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 30px;
+  color: white;
+  font: 20px/1.2 'Montserrat', sans-serif;
+}
+
+.container-gallery {
+  display: flex;
+  flex-direction: column;
+  border-radius: 30px;
+  padding: 10px 30px;
+  color: white;
+}
+
+.title-gallery {
+  padding-bottom: 10px;
+  font: 32px/1.2 'Montserrat', sans-serif;
+  margin: 30px;
+  text-align: center;
+  border-bottom: 2px solid white;
+}
+
+.gallery-arrow {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 20px;
+  gap: 2%;
+}
+
+.gallery-arrow-next {
+  background: url(./assets/svg/arrow.svg) center no-repeat;
+  border-radius: 50%;
+  font: 16px/1.2 'Montserrat', sans-serif;
+  box-shadow: inset 0px 5px 10px 2px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(15px);
+  border: 2px solid transparent;
+  color: white;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.gallery-arrow-prev {
+  background: url(./assets/svg/arrow.svg) center no-repeat;
+  transform: rotate(180deg);
+  border-radius: 50%;
+  font: 16px/1.2 'Montserrat', sans-serif;
+  box-shadow: inset 0px 5px 10px 2px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(15px);
+  border: 2px solid transparent;
+  color: white;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.gallery-card {
+  display: flex;
+}
+
+.gallery-card-current,
+.gallery-card-next {
+  flex: 0 1 70%;
+  width: 50%;
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  font: 16px/1.2 'Montserrat', sans-serif;
+  box-shadow: inset 0px 10px 20px 2px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(15px);
+  border-radius: 30px;
+  border: 2px solid transparent;
+  color: white;
+  transition: all 0.5s ease;
+}
+
+.gallery-card-div {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+.gallery-card-image{
+  flex: 0 1 40%;
+  margin: 10px;
+  border-radius: 30px;
+  max-width: 200px;
+  width: 100%;
+  aspect-ratio: 1/1;
+  background-image: url(./assets/svg/birdbig.svg);
+  background-size:cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.gallery-card-desc {
+  width: 100%;
+}
+
+.gallery-card-title {
+  margin: 10px;
+}
+
+.gallery-card-species {
+  margin: 10px;
+}
+
+.gallery-card-info {
+  margin: 0 10px;
+  font: 16px/1.8 'Montserrat', sans-serif;
+}
+
+.gallery-card-audio {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.gallery-audio-controls{
+  display: flex;
+  width: 100%;
+}
+
+.gallery-audio-play {
+  width: 28px;
+  height: 28px;
+  padding: 2px;
+  background-size: cover;
+  background-position: center;
+  background-image: url("./assets/svg/play.svg");
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+
+.gallery-audio-time{
+  width: 100%;
+}
+
+.gallery-time-line {
+  margin: 20px;
+  margin: 10px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  height: 5px;
+  border: 1px solid #b2b2b2;
+  border-radius: 3px;
+  background: rgba(129, 126, 126, 0.6705882353);
+  box-shadow: none;
+}
+
+.gallery-time-line-current {
+  width: 0;
+  height: 3px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  background: linear-gradient(rgb(152, 97, 29), rgb(220, 146, 54));
+}
+
+.gallery-time-line-info {
+  display: flex;
+  justify-content: space-between;
+  font: 14px/1.8 'Montserrat', sans-serif;
+  padding: 0 10px;
+}
+
+
+
+.gallery-audio-volume {
+  display: flex;
+  align-items: center;
+  // background: yellow;
+}
+
+.gallery-audio-volume-button{
+  width: 30px;
+  height: 30px;
+  margin: 0px 7px;
+  background-size: 28px 28px;
+  background: url(./assets/svg/volume.svg) center/cover no-repeat;
+  cursor: pointer;
+}
+
+.volume-line {
+  // opacity: 0;
+  height: 5px;
+  background-color: rgb(220,146,54);
+  border-radius: 3px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+._change-volume {
+opacity: 1;
+transition: all 0.3s ease;
+}
+
+.volume-line {
+  --range: calc(var(--max) - var(--min));
+  --ratio: calc((var(--value) - var(--min)) / var(--range));
+  --sx: calc(var(--ratio) * 100%);
+}
+
+.volume-line:focus {
+  outline: none;
+  
+}
+
+.volume-line::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 0;
+  height: 6px;
+  visibility: hidden;
+}
+
+.volume-line::-webkit-slider-runnable-track {
+  height: 6px;
+  border: 1px solid #b2b2b2;
+  border-radius: 3px;
+  background: #817E7EAB;
+  box-shadow: none;
+}
+
+.volume-line::-webkit-slider-runnable-track {
+  background: linear-gradient(rgb(152, 97, 29),rgb(220,146,54)) 0/var(--sx) 100% no-repeat, #817E7EAB;
+}
