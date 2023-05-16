@@ -70,20 +70,23 @@
   text-align: center; 
 }
 
-a {
+.main-btn-link,
+.quiz-btn-link,
+.result-btn-link,
+.gallery-btn-link {
   font: 18px/1.2 'Montserrat', sans-serif;
   display: block;
   color: inherit;
   padding: 10px; 
-}
+  
+  &:hover,
+  &:active {
+    background: rgb(208, 131, 36, 0.7);
+    border-radius: 30px; 
+  }
 
-a:hover,
-a:active {
-  background: rgb(208, 131, 36, 0.7);
-  border-radius: 30px; 
-}
-
-.active-header {
-  background: rgb(220,146,54);
-  border-radius: 10px;
+  .active {
+    background: rgb(220, 146, 54);
+    border-radius: 30px;
+  }
 }

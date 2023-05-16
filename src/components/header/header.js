@@ -1,63 +1,46 @@
-import createElement from "../utils.js";
-import route from '../router.js';
+import { createElement } from "../utils.js";
+import { route } from '../router.js';
 
-export default {
-  setHeader(){
+export function setHeader() {
     
 const header = createElement('div', 'header');
     const logo = createElement('div', 'logo');
     const logoImage = createElement('div', 'logo-image');
-    const logoText = createElement('div', 'logo-text');
-    const logoSpan = createElement('span', 'logo-text-span');
-    logoSpan.innerHTML = 'Bird';
-    
-    logoText.textContent = 'Song';
+    const logoText = createElement('div', 'logo-text', 'Song');
+    const logoSpan = createElement('span', 'logo-text-span', 'Bird');
     
     const nav = createElement('ul', 'nav');
-    const mainBtn = createElement('li', 'main-btn');
-    const mainBtnLink = createElement('a', 'main-btn-link');
-    mainBtnLink.setAttribute('href', '#/');
-    mainBtn.append(mainBtnLink);
-    mainBtnLink.addEventListener('click', (e) => {
-      route('#/');
-      mainBtnLink.classList.add('active-header');
-    })
-    mainBtnLink.textContent = 'Main';
-    const quizBtn = createElement('li', 'quiz-btn');
-    const quizBtnLink = createElement('a', 'quiz-btn-link');
-    quizBtnLink.setAttribute('href', '#/quiz/');
-    quizBtn.append(quizBtnLink);
-    quizBtnLink.addEventListener('click', () => {
-      route('#/quiz/');
-      quizBtnLink.classList.add('active-header');
-    })
-    quizBtnLink.textContent = 'quiz';
 
-    const resultBtn = createElement('li', 'result-btn');
-    const resultBtnLink = createElement('a', 'result-btn-link');
-    resultBtnLink.setAttribute('href', '#/result/');
-    resultBtnLink.addEventListener('click', () => {
-      route('#/result/');
-      resultBtnLink.classList.add('active-header');
-    })
-    resultBtn.append(resultBtnLink);
-    resultBtnLink.textContent = 'result';
+    const routeLink = [
+      {
+        name: 'main',
+        route: '#/'
+      },
+      {
+        name: 'quiz',
+        route: '#/quiz/'
+      },
+      {
+        name: 'result',
+        route: '#/result/'
+      },
+      {
+        name: 'gallery',
+        route: '#/gallery/'
+      }
+    ]
 
-    const galleryBtn = createElement('li', 'gallery-btn');
-    const galleryBtnLink = createElement('a', 'gallery-btn-link');
-    galleryBtnLink.setAttribute('href', '#/gallery/');
-    galleryBtn.append(galleryBtnLink);
-    galleryBtnLink.addEventListener('click', (e) => {
-      galleryBtn.classList.add('active-header');
-      route('#/gallery/');
-      
+    routeLink.forEach((link) => {
+      const navlink = createElement('li', `${link.name}-btn`);
+      const btn = createElement('a', `${link.name}-btn-link`, link.name);
+      btn.setAttribute('href', link.route);
+      btn.addEventListener('click', () => route(link.route));
+      navlink.append(btn);
+      nav.append(navlink);
     })
-    galleryBtnLink.textContent = 'gallery';
 
     logoText.append(logoSpan);
     logo.append(logoImage, logoText);
-    nav.append(mainBtn, quizBtn, resultBtn, galleryBtn);
     header.append(logo, nav);
     root.append(header);
   }
-}

@@ -1,45 +1,30 @@
-import createStartPage from "./pages/main";
-import createQuiz from "./pages/quiz";
-import header from './header/header.js';
-import footer from './footer/footer.js';
-import createResultPage from "./pages/result";
-import createGallery from './pages/gallery';
+import { createStartPage } from '../pages/main/main';
+import { createQuiz } from '../pages/quiz/quiz';
+import { createResultPage } from '../pages/result/result';
+import { createGallery } from '../pages/gallery/gallery';
+import { createPage } from '../index.js';
 
-let root = document.getElementById('root');
-
-export default function route(location) {
-switch (location) {
-  case '#/':
-    root.innerHTML= ``;
-    header.setHeader();
-    createStartPage();
-    footer.setFooter();
-    break
+export async function route(location) {
+  switch (location) {
+    case '#/':
+      createPage(createStartPage);
+      break;
 
     case '#/quiz/':
-      root.innerHTML = ``;
-      header.setHeader();
-      createQuiz();
-      footer.setFooter();
-      break
+      createPage(createQuiz);
+      break;
 
     case '#/result/':
-      root.innerHTML = ``;
-      header.setHeader();
-      createResultPage();
-      footer.setFooter();
-      break
+      createPage(createResultPage);
+      break;
 
     case '#/gallery/':
-      root.innerHTML = ``;
-      header.setHeader();
-      createGallery();
-      footer.setFooter();
-      break
+      createPage(createGallery);
+      break;
   }
-};
+}
 
-  window.addEventListener('load', ()=> {
-    const location = window.location.hash;
-    if (location) route(location);
-  });
+window.addEventListener('load', () => {
+  const location = window.location.hash;
+  if (location) route(location);
+});

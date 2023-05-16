@@ -1,3 +1,70 @@
+.list-bird {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: white
+}
+
+.list-bird-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  text-align: center;
+  max-width: 300px;
+  width: 100%;
+  margin: 10px;
+  padding: 10px;
+  font: 16px/1.2 'Montserrat', sans-serif;
+  box-shadow: inset 0px 10px 20px 2px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(15px);
+  border-radius: 30px;
+  border: 2px solid transparent;
+  color: white;
+}
+
+.active-bird {
+  background: rgb(208, 131, 36, 0.7);
+  border-radius: 30px; 
+}
+
+.question-wrapper {
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+}
+
+.question-img {
+  border-radius: 20px;
+  max-width: 160px;
+  width: 100%;
+  aspect-ratio: 1/1;
+  background-image: url(./assets/svg/birdbig.svg);
+  background-size:cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.question-div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  margin-left: 30px; 
+}
+
+.question-title {
+  font: 26px/1.2 'Montserrat', sans-serif;;
+  color: rgb(220,146,54);
+  margin: 0 0 20px;
+}
+
+.question-score {
+  text-align: end;
+  font: 22px/1.2 'Montserrat', sans-serif;;
+  margin: 0 0px;
+}
+
 .answer-wrapper {
   display: flex;
 }

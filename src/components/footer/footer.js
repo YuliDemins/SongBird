@@ -1,12 +1,11 @@
-import createElement from "../utils.js";
+import { createElement } from "../utils.js";
 import rss from '../../assets/svg/rsschool.svg';
 import gh from '../../assets/svg/github.svg';
 
-export default {
-  async setFooter() {
+export async function setFooter() {
     const footer = createElement("div", "footer");
-    const create = createElement("div", "create");
-    create.textContent = "2022";
+    const create = createElement("div", "create", "2022");
+
     const logos = createElement("div", "logos");
     const rsschool = createElement("div", "rsschool");
     const rsschoolLink = createElement("a", "rsschool-link");
@@ -26,5 +25,4 @@ export default {
     logos.append(rsschool, github);
     footer.append(create, logos);
     await root.append(footer);
-  }
 };

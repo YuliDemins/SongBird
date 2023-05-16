@@ -1,17 +1,15 @@
-import './style.scss'
+import './style.scss';
 import './assets/svg/rsschool.svg';
-
-
-import header from './components/header/header.js'
-
-import createStartPage from './components/pages/main';
-
-import footer from './components/footer/footer.js'
-
+import { setHeader } from './components/header/header.js';
+import { createStartPage } from './pages/main/main';
+import { setFooter } from './components/footer/footer.js';
 let root = document.getElementById('root');
 
-header.setHeader()
+export function createPage(page) {
+  root.innerHTML = ``;
+  setHeader();
+  page();
+  setFooter();
+}
 
-createStartPage()
-
-footer.setFooter()
+createPage(createStartPage);
