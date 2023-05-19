@@ -2,7 +2,7 @@
 
 Songbird - приложение-викторина для распознавания птиц по их голосам.
 
-https://rolling-scopes-school.github.io/yulidemins-JSFE2022Q3/songbird/
+https://yulidemins-songbird.netlify.app/
 
 ![image](https://github.com/YuliDemins/SongBird/assets/105985415/5820a304-51ac-46f6-8dbf-5ee07a012c32)
 
