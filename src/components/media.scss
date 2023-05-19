@@ -1,0 +1,174 @@
+@media (max-width: 1160px) {
+  .list-bird {
+    flex-wrap: wrap;
+  }
+
+  .list-bird-item {
+    margin: 0;
+  }
+}
+
+@media (max-width: 1105px) {
+  .list-bird-item {
+    max-width: 250px;
+  } 
+}
+
+@media (max-width: 879px) {
+  .list-bird-item {
+    max-width: 150px;
+  }
+
+  .answer-card-div {
+    gap:5px
+  }
+}
+
+@media (max-width: 500px) {
+  .header{
+    margin: 0 auto;
+  }
+  .nav{
+    font: 12px/1.2 'Montserrat', sans-serif;
+    gap:10px;
+  }
+  .list-bird{
+    margin: 20px;
+  }
+  .list-bird-item {
+    max-width: 120px;
+    font: 12px/1.2 'Montserrat', sans-serif;
+  }
+  .logo-text,
+  .logo-text-span {
+    display: none;
+  }
+
+  .question-title,
+  .question-score {
+    font: 16px/1.2 'Montserrat', sans-serif;
+  }
+
+  .question-audio-play {
+    padding: 2px;
+    width: 22px;
+    height: 20px;
+  }
+
+  .question-audio-volume-button {
+    padding: 2px;
+    width: 22px;
+    height: 20px;
+  }
+
+  .time-line-run,
+  .time-line-show {
+    font: 142px/1.2 'Montserrat', sans-serif;
+  }
+
+  .answer-list-item {
+    font: 14px/1.2 'Montserrat', sans-serif;
+    margin: 10px 0;
+  }
+
+  .question-img {
+    max-width: 70px;
+    height: 70px;
+  }
+
+  .answer-wrapper {
+    flex-direction: column;
+  }
+
+  .answer-choise {
+    flex: 0 1 100%;
+    width: 100%;  
+  }
+
+  .answer-list {
+    padding: 0;
+  }
+
+  .answer-list-item {
+    width: 100%;
+    margin: 5px auto;
+  }
+
+  .answer-card {
+    height: 100%;
+    font: 14px/1.2 'Montserrat', sans-serif;
+    margin: 20px 0 0;
+  }
+
+  .answer-card-desc {
+    padding: 10px;
+  }
+
+  .answer-audio-play {
+    padding: 2px;
+    width: 22px;
+    height: 20px;
+  }
+
+  .answer-time-line {
+    margin: 6px 0;
+  }
+
+  .answer-time-line-info {
+    font: 12px/1.2 'Montserrat', sans-serif;
+    padding: 0;
+  }
+
+  .answer-card-info {
+    font: 14px/1.2 'Montserrat', sans-serif;
+  }
+
+  .next-level {
+    font: 14px/1.2 'Montserrat', sans-serif;
+    margin: 0 0 20px;
+  }
+
+  .footer {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 419px) {
+  .logo-text {
+    font: lighter 16px/1.2 'Montserrat', sans-serif;
+  }
+
+  .logo-text-span {
+    font: bold 20px/1.2 'Montserrat', sans-serif;
+  }
+
+  .nav{
+    width: 100%;
+  }
+
+  .question-wrapper {
+    flex-direction: column;
+  }
+
+  .question-img {
+    margin: 0 auto;
+  }
+
+  .question-div {
+    margin: 0px;
+  }
+}
+
+@media (max-width: 370px) {
+  .wrapper {
+    padding: 0;
+  }
+
+  .answer-card-div {
+    flex-direction: column;
+  }
+
+  .answer-card-image {
+    margin: 10px auto 0;
+  }
+}

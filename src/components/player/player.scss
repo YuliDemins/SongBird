@@ -1,0 +1,113 @@
+.question-audio {
+  display: flex;
+  flex-direction: column;
+  font: 16px/1.2 'Montserrat', sans-serif;
+}
+
+.question-audio-controls{
+  display: flex;
+}
+
+.question-audio-play {
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+  background-position: center;
+  background-image: url("./assets/svg/play.svg");
+  background-repeat: no-repeat;
+  margin: 0px 7px;
+  cursor: pointer;
+}
+
+.question-audio-pause {
+  background-image: url("./assets/svg/pause.svg");
+}
+
+.time-line-info{
+  display: flex;
+  justify-content: space-between;
+}
+
+.question-audio-volume {
+  display: flex;
+  align-items: center;
+}
+
+.question-audio-volume-button{
+  width: 30px;
+  height: 30px;
+  margin: 0px 7px;
+  background-size: 28px 28px;
+  background: url(./assets/svg/volume.svg) center/cover no-repeat;
+  cursor: pointer;
+}
+
+.volume-line {
+  height: 5px;
+  background-color: rgb(220,146,54);
+  border-radius: 3px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+._change-volume {
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.volume-line {
+  --range: calc(var(--max) - var(--min));
+  --ratio: calc((var(--value) - var(--min)) / var(--range));
+  --sx: calc(var(--ratio) * 100%);
+}
+
+.volume-line:focus {
+  outline: none;  
+}
+
+.volume-line::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 0;
+  height: 6px;
+  visibility: hidden;
+}
+
+.volume-line::-webkit-slider-runnable-track {
+  height: 6px;
+  border: 1px solid #b2b2b2;
+  border-radius: 3px;
+  background: #817E7EAB;
+  box-shadow: none;
+}
+
+.volume-line::-webkit-slider-runnable-track {
+  background: linear-gradient(rgb(152, 97, 29),rgb(220,146,54)) 0/var(--sx) 100% no-repeat, #817E7EAB;
+}
+
+.question-audio-time{
+  width: 100%;
+}
+
+.time-line{
+  margin: 20px;
+  margin: 10px 0 10px;
+  border-radius: 3px; 
+  cursor: pointer;
+  height: 5px;
+  border: 1px solid #b2b2b2;
+  border-radius: 3px;
+  background: #817E7EAB;
+  box-shadow: none;
+}
+.time-line-current{
+  width: 0; 
+  height: 3px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  background: linear-gradient(rgb(152, 97, 29),rgb(220,146,54));
+
+  &:hover {
+    background-color: rgb(152, 97, 29);
+  }
+}
